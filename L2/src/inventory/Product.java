@@ -6,7 +6,7 @@ public class Product {
 	private final double price;
 	private final int totalQuantity;
 	private Integer soldQuantity;
-	public final Object Lock = new Object();
+	public final Object LOCK = new Object();
 
 	public Product(String name, double price, int quantity) {
 		this.name = name; 
@@ -36,7 +36,9 @@ public class Product {
 	}
 
 	public boolean sell(int quantity) {
-		synchronized(this.Lock) {
+		
+		// take logic out
+		synchronized(LOCK) {
 			if(this.remaining() < quantity)
 				return false;
 			else 

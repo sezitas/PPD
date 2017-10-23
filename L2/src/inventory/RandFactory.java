@@ -13,7 +13,7 @@ public class RandFactory implements IFactory {
 	@Override
 	public void generateProducts(Inventory inventory) {
 		Random rn = new Random();
-		for(Inventory.names name: Inventory.names.values()) {
+		for(EProductsNames name: EProductsNames.values()) {
 			int quantity = rn.nextInt(3000);
 
 			double decimal = Math.random();
