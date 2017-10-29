@@ -39,7 +39,7 @@ public class ThreadPoolLab3 {
 	@SuppressWarnings("unused")
 	private static void runSimulation() {
 		System.out.print("Initializing matrices... ");
-		int M = 600;
+		int M = 700;
 		Matrice A = new Matrice(M);
 		Matrice B = new Matrice(M);
 		Matrice C = new Matrice(M);

@@ -1,0 +1,31 @@
+Requirements
+
+Take the same problems as for lab 2, but, instead of directly creating threads, use each of the following:
+
+ - Thread pool, in C# or Java.
+ - Tasks and futures in C# or Java.
+ 
+ Synchronization used: No synchronization mechanism necessary since each thread works on a separate row (or rows) of the matrix.
+ 
+ Performance comparison: 
+  - system specifications: Windows PC with AMD CPU with 8 physical cores and 8 threads 
+ 
+Square Matrix of size 700
+Implementation using Futures: 
+ - 1 threads: 6649 ms
+ - 2 threads: 3370 ms
+ - 4 threads: 2003 ms
+ - 8 threads: 1649 ms
+ - 10 threads: 1663 ms
+ - 20 threads: 1587 ms
+ - 40 threads: 1633 ms
+
+
+Implementation using ThreadPool:
+ - 1 threads: 7072 ms
+ - 2 threads: 3547 ms
+ - 4 threads: 2128 ms
+ - 8 threads: 1592 ms
+ - 10 threads: 1612 ms
+ - 20 threads: 1584 ms
+ - 40 threads: 1671 ms
