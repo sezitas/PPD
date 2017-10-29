@@ -1,4 +1,4 @@
-package main;
+package threadPool;
 
 import java.util.Random;
 

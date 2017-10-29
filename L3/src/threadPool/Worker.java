@@ -1,4 +1,4 @@
-package main;
+package threadPool;
 
 public class Worker implements Runnable{
 
