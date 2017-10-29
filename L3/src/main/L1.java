@@ -65,7 +65,7 @@ public class L1 {
 			iterator++;
 			Worker w = new Worker(start, end, M, A, B, C);
 			t[i] = new Thread(w);
-			t[i].run();
+			t[i].start();
 		}
 		
 		for (int i=0; i<K; i++) {
