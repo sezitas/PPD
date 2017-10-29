@@ -1,6 +1,8 @@
-package threadPool;
+package tasksFutures;
 
-public class Worker implements Runnable{
+import java.util.concurrent.Callable;
+
+public class Worker implements Callable<Void>{
 
 	int start, end, M;
 	Matrice A,B,C;
@@ -14,7 +16,7 @@ public class Worker implements Runnable{
 		this.C = C;
 	}
 
-	public void run() {
+	public Void call() {
 		for (int i = start; i <= end; i++) { // aRow
 			for (int j = 0; j < M; j++) { // bColumn
 				for (int k = 0; k < M; k++) { // aColumn
@@ -22,6 +24,7 @@ public class Worker implements Runnable{
 				}
 			}
 		}
+		return null;
 	}
 
 }

@@ -1,13 +1,14 @@
-package threadPool;
+package tasksFutures;
 
 import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 //import java.util.Scanner;
 
-public class L3 {
+public class TasksFuturesLab3 {
 
 	public static void main(String[] args) {
 
@@ -24,10 +25,10 @@ public class L3 {
 		M = Integer.parseInt(s.nextLine());
 		System.out.print("K = ");
 		K = Integer.parseInt(s.nextLine());
+		
 		Matrice A = new Matrice(M);
 		Matrice B = new Matrice(M);
 		Matrice C = new Matrice(M);
-
 		A.generateMatrice();
 		B.generateMatrice();
 		C.generateZeroMatrice();
@@ -38,6 +39,7 @@ public class L3 {
 
 	@SuppressWarnings("unused")
 	private static void runSimulation() {
+		System.out.print("Initializing matrices... ");
 		int M = 600;
 		Matrice A = new Matrice(M);
 		Matrice B = new Matrice(M);
@@ -46,6 +48,7 @@ public class L3 {
 		A.generateMatrice();
 		B.generateMatrice();
 		C.generateZeroMatrice();
+		System.out.println("Done.\nStarting Simulation:");
 
 		int K = 1;
 		runTest(M, K, A, B, C);
@@ -61,6 +64,7 @@ public class L3 {
 		runTest(M, K, A, B, C);
 		K = 40;
 		runTest(M, K, A, B, C);
+		System.out.println("Simulation Complete.");
 	}
 
 	private static void runTest(int M, int K, Matrice A, Matrice B, Matrice C) {
@@ -83,7 +87,7 @@ public class L3 {
 			int end = iterator;
 			iterator++;
 			Worker w = new Worker(start, end, M, A, B, C);
-			executor.submit(w);
+			Future<Void> future = executor.submit(w);
 		}
 
 		executor.shutdown();
