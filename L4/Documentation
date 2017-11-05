@@ -1,0 +1,21 @@
+Requirements
+
+Take the same problems as for lab 3, but instead of 2 matricx multiplication we must multiply 3 matrices in such a way that 
+when a line in the first matrix is finished computed the mutliplication with the third matrix is triggered in a separate set of threads
+
+ Synchronization used: No synchronization mechanism necessary since each thread works on a separate row (or rows) of the matrix.
+ 
+ Performance comparison: 
+  - system specifications: Windows PC with AMD CPU with 8 physical cores and 8 threads 
+ 
+Square Matrix of size 700
+
+2 Matrices run:				3 Matrices run:
+
+1 thread:   6711 ms			1 threads: 8316 ms
+2 threads:  3637 ms			2 threads: 5135 ms
+4 threads:  2121 ms			4 threads: 3816 ms
+8 threads:  1647 ms			8 threads: 3694 ms
+10 threads: 2101 ms			10 threads: 3829 ms
+20 threads: 1689 ms			20 threads: 3737 ms
+40 threads: 1612 ms			40 threads: 3950 ms

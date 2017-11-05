@@ -1,0 +1,28 @@
+Requirements
+
+Take the same problems as for lab 3, but instead of 2 matricx multiplication we must multiply 3 matrices in such a way that 
+when a line in the first matrix is finished computed the mutliplication with the third matrix is triggered in a separate set of threads
+
+ Synchronization used: 
+  - each row of a matrix has it's own conditional lock
+  - when the second threadpool starts each thread gets all the locks from the C matrix (result of first multiplication) 
+  and also waits on them for a signal. This also releases the locks;
+  - when the first threadpool starts the  each thread gets the lock for teh C matrix, performs the multiplication, 
+  and at the end of each row it notifies the other thread to start working. The thread from the second threadpool starts mutliplying that row with the third matrix
+  
+  This implementation requires the second threadpool to have the size of the number of rows 
+  
+ Performance comparison: 
+  - system specifications: Windows PC with AMD CPU with 8 physical cores and 8 threads 
+ 
+Square Matrix of size 700
+
+2 Matrices run:				3 Matrices run:
+
+1 thread:   6711 ms			1 threads: 8392 ms
+2 threads:  3637 ms			2 threads: 5083 ms
+4 threads:  2121 ms			4 threads: 3930 ms
+8 threads:  1647 ms			8 threads: 3762 ms
+10 threads: 2101 ms			10 threads: 3903 ms
+20 threads: 1689 ms			20 threads: 3905 ms
+40 threads: 1612 ms			40 threads: 3821 ms
