@@ -3,9 +3,9 @@ package main;
 public class Worker implements Runnable{
 
 	int start, end, M;
-	Matrice A,B,C;
+	Matrix A,B,C;
 
-	Worker (int start, int end, int M, Matrice A, Matrice B, Matrice C) {
+	Worker (int start, int end, int M, Matrix A, Matrix B, Matrix C) {
 		this.start = start;
 		this.end = end;
 		this.M = M;

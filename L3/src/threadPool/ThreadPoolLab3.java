@@ -25,9 +25,9 @@ public class ThreadPoolLab3 {
 		System.out.print("K = ");
 		K = Integer.parseInt(s.nextLine());
 		
-		Matrice A = new Matrice(M);
-		Matrice B = new Matrice(M);
-		Matrice C = new Matrice(M);
+		Matrix A = new Matrix(M);
+		Matrix B = new Matrix(M);
+		Matrix C = new Matrix(M);
 		A.generateMatrice();
 		B.generateMatrice();
 		C.generateZeroMatrice();
@@ -40,9 +40,9 @@ public class ThreadPoolLab3 {
 	private static void runSimulation() {
 		System.out.print("Initializing matrices... ");
 		int M = 700;
-		Matrice A = new Matrice(M);
-		Matrice B = new Matrice(M);
-		Matrice C = new Matrice(M);
+		Matrix A = new Matrix(M);
+		Matrix B = new Matrix(M);
+		Matrix C = new Matrix(M);
 
 		A.generateMatrice();
 		B.generateMatrice();
@@ -66,7 +66,7 @@ public class ThreadPoolLab3 {
 		System.out.println("Simulation Complete.");
 	}
 
-	private static void runTest(int M, int K, Matrice A, Matrice B, Matrice C) {
+	private static void runTest(int M, int K, Matrix A, Matrix B, Matrix C) {
 		int div = M / K;
 		int mod = M % K;
 

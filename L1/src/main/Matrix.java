@@ -1,12 +1,12 @@
-package threadPool;
+package main;
 
 import java.util.Random;
 
-public class Matrice {
+public class Matrix {
 	int M;
 	Integer[][] A;
 
-	Matrice(int M) {
+	Matrix(int M) {
 		this.M = M;
 		A = new Integer[M][M];
 	}

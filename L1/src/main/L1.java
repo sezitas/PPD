@@ -37,9 +37,9 @@ public class L1 {
 	
 	private static void runTest (int M, int K) {
 		
-		Matrice A = new Matrice(M);
-		Matrice B = new Matrice(M);
-		Matrice C = new Matrice(M);
+		Matrix A = new Matrix(M);
+		Matrix B = new Matrix(M);
+		Matrix C = new Matrix(M);
 		
 		A.generateMatrice();
 		B.generateMatrice();
